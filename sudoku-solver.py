@@ -6,6 +6,8 @@ import time
 from random import randint
 from os import system, name
 
+from Sudoku.Solver import solve_sudoku
+
 num_solution = 0
 max_cells_removed = 0
 
@@ -62,45 +64,6 @@ def remove_cells():
             grid[y][x] = 0
             num_cells_removed += 1
 
-def is_possible(y,x,n):
-    global grid
-    
-    """ checking line """
-    for i in range(0,9):
-        if grid[y][i] == n:
-            return False
-
-    """ checking column"""
-    for i in range(0,9):
-        if grid[i][x] == n :
-            return False
-    
-    """ checking square """
-    x0 = (x//3)*3
-    y0 = (y//3)*3
-    for i in range(0,3):
-        for j in range(0,3):
-            if grid[y0+i][x0+j] == n:
-                return False
-    return True
-
-def solve_sudoku():
-    global grid
-    global num_solution
-    for y in range(9):
-        for x in range(9):
-            if grid[y][x] == 0:
-                for n in range(1,10):
-                    if is_possible(y,x,n):
-                        grid[y][x] = n
-                        solve_sudoku()
-                        grid[y][x] = 0
-                return
-    num_solution += 1
-    print(f'\nSolution {num_solution}')
-    print(np.matrix(grid))
-    input(f'\nOther Possibility?')
-
 def set_grid_difficulty():
     global max_cells_removed
     while True:
@@ -117,7 +80,7 @@ if __name__ == "__main__":
     set_grid_difficulty()
     generate_grid()
     print(f'\nSudoku Grid:\n {np.matrix(grid)}')
-    solve_sudoku()
+    solve_sudoku(grid)
 
 
 
