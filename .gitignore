@@ -1,0 +1,10 @@
+# ignore vim files
+*.vim
+
+# ignore cache
+*.pyc
+
+# ignore logs
+*.log
+
+
