@@ -32,7 +32,13 @@ solve a sudoku. The project consist of 4 parts:
 
 ### Part 4: User Input
 
-  [todo]
+  Difficulty:
+	1. Easy: 19 cells removed
+	2. Medium: 28 cells removed
+	3. Hard: 37 cells removed
+	4. Expert: 46 cells removed
+	5. Insane: 55 cells removed
+	6. Godlike: 64 cells removed
 
 ### Ressources
 * Python Sudoku Solver bu Computerphile: https://www.youtube.com/watch?v=G_UYXzGuqvM&t=573s
