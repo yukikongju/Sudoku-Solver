@@ -1,11 +1,13 @@
 #!/usr/bin/python
 
-
 import numpy as np
+import os
 import time
+from random import randint
 from os import system, name
 
 num_solution = 0
+max_cells_removed = 32
 
 grid_one_sol = [[5,3,0,0,7,0,0,0,0],
                 [6,0,0,1,9,5,0,0,0],
@@ -18,15 +20,24 @@ grid_one_sol = [[5,3,0,0,7,0,0,0,0],
                 [0,0,0,0,8,0,0,7,9]]
 
 grid = [[5,3,0,0,7,0,0,0,0],
-        [6,0,0,1,9,5,0,0,0],
-        [0,9,8,0,0,0,0,6,0],
-        [8,0,0,0,6,0,0,0,3],
-        [4,0,0,8,0,3,0,0,1],
-        [7,0,0,0,2,0,0,0,6],
-        [0,6,0,0,0,0,2,8,0],
-        [0,0,0,4,1,9,0,0,5],
-        [0,0,0,0,8,0,0,0,0]]
+         [6,0,0,1,9,5,0,0,0],
+         [0,9,8,0,0,0,0,6,0],
+         [8,0,0,0,6,0,0,0,3],
+         [4,0,0,8,0,3,0,0,1],
+         [7,0,0,0,2,0,0,0,6],
+         [0,6,0,0,0,0,2,8,0],
+         [0,0,0,4,1,9,0,0,5],
+         [0,0,0,0,8,0,0,0,0]]
 
+
+def remove_cells():
+    num_cells_removed = 0
+    while num_cells_removed < max_cells_removed:
+        x = randint(0,8) # grid index range from 0 and 8
+        y = randint(0,8)
+        if grid[y][x] != 0:
+            grid[y][x] = 0
+            num_cells_removed += 1
 
 def is_possible(y,x,n):
     global grid
@@ -68,7 +79,9 @@ def solve_sudoku():
     input(f'\nOther Possibility?')
 
 if __name__ == "__main__":
-    print('\nSudoku Grid')
-    print(np.matrix(grid))
+    print(f'\nSudoku Grid:\n {np.matrix(grid)}')
     solve_sudoku()
+
+
+
 
