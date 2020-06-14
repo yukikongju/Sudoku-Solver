@@ -1,6 +1,8 @@
 #!/usr/bin/python
 
+import numpy as np
 from random import randint
+from Sudoku.Solver import is_possible
 
 max_cells_removed = 0
 
@@ -34,6 +36,8 @@ grid = [[1,2,3,4,5,6,7,8,9],
         [6,4,5,9,7,8,3,1,2],
         [9,7,8,3,1,2,6,4,5]]
 
+empty_grid = np.zeros([9,9], dtype = int)
+
 """ Difficulty: Number of Cells removed """
 dict_difficulty = {
     1: 19, # easy
@@ -52,6 +56,12 @@ def generate_grid():
     remove_cells()
     return grid
 
+def generate_one_sol_grid():
+    pass
+
+def generate_multiple_sol_grid():
+    pass                 
+
 def remove_cells():
     num_cells_removed = 0
     while num_cells_removed < max_cells_removed:
@@ -65,7 +75,7 @@ def set_grid_difficulty():
     global max_cells_removed
     while True:
         try:
-            difficulty = int(input('Choose a difficulty. Easy: 1 , Medium: 2,' \
+            difficulty = int(input('Choose a difficulty. Easy: 1, Medium: 2, ' \
                 + 'Hard: 3, Expert: 4, Insane: 5, Godlike: 6 \n'))
             if difficulty in range(1,7):
                 max_cells_removed = dict_difficulty.get(difficulty)       

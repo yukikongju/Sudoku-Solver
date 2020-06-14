@@ -10,14 +10,14 @@ solve a sudoku. The project consist of 4 parts:
 ### Part 1: Generating a Sudoku Grid with difficulty level
 
   Step 1: Generating a Sudoku with Unique Solution
-	1. Find an existing sudoku
-	2. Exchange the values with a random group
-	3. Exchange the cell or the column or the row-grid or the colum-grid
+		1. Find an existing sudoku
+		2. Exchange the values with a random group
+		3. Exchange the cell or the column or the row-grid or the colum-grid
 
   Step 2: Deleting Cells based on difficulty level
-	1. Ask the user for difficulty level
-	2. Initialize the right number of cells to remove
-	3. Remove the cells
+	  1. Ask the user for difficulty level
+	  2. Initialize the right number of cells to remove
+	  3. Remove the cells
 
   More: Generating sudoku with more than one solution
 
@@ -26,19 +26,19 @@ solve a sudoku. The project consist of 4 parts:
 ### Part 3: Visualize the Backtracking algorithm
   
   Step 1: Print the step
-	1. Clear the screen
-	2. Print the grid
-	3. Make system sleep
+	  1. Clear the screen
+	  2. Print the grid
+	  3. Make system sleep
 
 ### Part 4: User Input
 
   Difficulty:
-	1. Easy: 19 cells removed
-	2. Medium: 28 cells removed
-	3. Hard: 37 cells removed
-	4. Expert: 46 cells removed
-	5. Insane: 55 cells removed
-	6. Godlike: 64 cells removed
+	  1. Easy: 19 cells removed
+	  2. Medium: 28 cells removed
+	  3. Hard: 37 cells removed
+	  4. Expert: 46 cells removed
+	  5. Insane: 55 cells removed
+	  6. Godlike: 64 cells removed
 
 ### Ressources
 * Python Sudoku Solver bu Computerphile: https://www.youtube.com/watch?v=G_UYXzGuqvM&t=573s
